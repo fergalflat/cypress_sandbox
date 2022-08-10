@@ -8,10 +8,11 @@ describe('CustomSuite', function ()
 
     it('Login Test', function()
     {
-        cy.login('username', 'password')
+        cy.login('username', 'password')//valid
         cy.title().should('be.equal', 'Dashboard / nopCommerce administration')
 
-        
+        cy.login('username', 'passwordjksdlfj')//invalid
+        cy.title().should('not.be.equal', 'Dashboard / nopCommerce administration')
 
     }
     )
