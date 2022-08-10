@@ -9,8 +9,14 @@
 // ***********************************************
 //
 //
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
+// -- This is a customized command --
+Cypress.Commands.add('login', (email, password) => {
+    cy.visit("https://frontend.nopcommerce.com/") //open url
+    cy.get('input[name=Email]').type(email)
+    cy.get('input[name=Password]').type(password)
+    cy.get('input[type=submit]').click()
+    
+})
 //
 //
 // -- This is a child command --
